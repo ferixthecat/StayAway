@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+}
+
+.navheader {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(/images/houseban.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    padding: 0 7%;
+}
+
+.navheader h1 {
+    font-size: 4vw;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    padding-top: 22%;
+}
+
+.navheader h2 {
+    font-size: 4vw;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.gridcontainer {
+    margin: 50px 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+  
+.content {
+    text-align: center;
+}
+  
+.content i {
+    max-width: 100%;
+}
+  
+.content h3 {
+    margin-top: 20px;
+}
+  
+.content p {
+    margin-top: 10px;
+}
+  
+.ftrentals {
+    margin: 50px 50px 20px;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.ftrentalcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 920px;
+    height: auto;
+    margin: 30px auto;
+    justify-content: space-between;
+}
+
+.box {
+    flex-basis: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.box:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+    cursor: pointer;
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.box .data {
+    display: flex;
+    flex-direction: row;
+    font-size: .8em;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.box h3 {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.box .data .roominf {
+    font-size: 1.5em;
+}
+
+.box .data .ppp {
+    font-size: 1.5em;
+}
+
+@media (max-width: 800px){
+    .ftrentalcontainer{
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    .ftrentalcontainer {
+        width: 85%;
+        display: block;
+    }
+    .box {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+}
+
+footer {
+    background-color: #111;
+}
+
+.footer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialicons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialicons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialicons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialicons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialicons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.footernav {
+    margin: 30px 0;
+}
+
+.footernav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footernav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footernav ul li a:hover {
+    opacity: 1;
+}
+
+.footerbtm {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerbtm p {
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .footernav ul {
+        flex-direction: column;
+    }
+    .footernav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}

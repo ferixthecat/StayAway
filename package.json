@@ -1,0 +1,22 @@
+{
+  "name": "web322-assignment",
+  "version": "1.0.0",
+  "description": "StayAway: Vacation home rental site.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rentals",
+    "vacation",
+    "travel",
+    "StayAway"
+  ],
+  "author": "Felix Tse",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}

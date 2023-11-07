@@ -1,0 +1,36 @@
+<% let body = `
+    <div class="gridcontainer">
+        <!-- Your HTML here -->
+        <div class="content">
+            <i class="fa-solid fa-handshake fa-2xl"></i>
+            <h3>Quality You Can Trust</h3>
+            <p>We believe in quality over quantity. Every property on our site is handpicked for its comfort, convenience, and charm</p>
+        </div>
+        <div class="content">
+            <i class="fa-solid fa-route fa-2xl"></i>
+            <h3>Explore With Confidence</h3>
+            <p>Discover new destinations with the assurance that your accommodations are taken care of</p>
+        </div>
+        <div class="content">
+            <i class="fa-solid fa-house-chimney fa-2xl"></i>
+            <h3>A Home Away From Home</h3>
+            <p>Experience the warmth and comfort of a home, even when you're far away</p>
+        </div>
+        <div class="content">
+            <i class="fa-solid fa-eye-slash fa-2xl"></i>
+            <h3>Discover Hidden Gems</h3>
+            <p>Uncover unique properties in off-the-beaten-path locations</p>
+        </div>
+    </div>
+    <div class="ftrentals">Featured Rentals</div>
+    <div class="ftrentalcontainer">
+` %>
+
+<% featuredRentals.forEach(function(rental) { %>
+    <% body += include('../partials/rental', { rental: rental }) %>
+<% }); %>
+
+<% body += `</div>` %>
+
+<%- include('../layouts/main', {body: body}) %>
+
