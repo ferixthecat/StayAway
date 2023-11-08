@@ -1,6 +1,5 @@
-<% let body = `
+<% let homebody = `
     <div class="gridcontainer">
-        <!-- Your HTML here -->
         <div class="content">
             <i class="fa-solid fa-handshake fa-2xl"></i>
             <h3>Quality You Can Trust</h3>
@@ -27,10 +26,12 @@
 ` %>
 
 <% featuredRentals.forEach(function(rental) { %>
-    <% body += include('../partials/rental', { rental: rental }) %>
+    <% homebody += include('../partials/rental', { rental: rental }) %>
 <% }); %>
 
-<% body += `</div>` %>
+<% homebody += `</div>` %>
 
-<%- include('../layouts/main', {body: body}) %>
+<%- include('../layouts/main', {body: homebody}) %>
+
+
 

@@ -1,0 +1,19 @@
+<% let body = '' %>
+<% rentals.forEach(function(group, index) { %>
+    <% body += '<section class="rentalsctn">' %>
+    <% body += '<h2>' + group.cityProvince + '</h2>' %>
+    <% body += '<div class="grid">' %>
+    <% group.rentals.forEach(function(rental, index) { %>
+        <% body += include('../partials/rental', {rental: rental}) %>
+        <% if ((index + 1) % 2 === 0) { %>
+            <% body += '<div class="clearfix"></div>' %>
+        <% } %>
+    <% }) %>
+    <% body += '</div></section>' %>
+    <% if (index < rentals.length - 1) { %>
+        <% body += '<hr>' %>
+    <% } %>
+<% }) %>
+
+<%- include('../layouts/main', {body: body}) %>
+

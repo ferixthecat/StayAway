@@ -236,3 +236,85 @@ footer {
         margin: 10px;
     }
 }
+
+.signupctn, .loginctn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.supcontainer {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 60px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px; 
+}
+
+h1 {
+    font-size: 36px; 
+    margin-bottom: 40px; 
+}
+
+.supentry {
+    margin-bottom: 20px; 
+}
+
+input {
+    width: calc(100% - 16px); 
+    padding: 16px; 
+}
+
+.btncontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.signupbtn {
+    font-size: 20px; 
+    padding: 16px 32px; 
+}
+
+.login-link, .signuplink {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.signuplink a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.rentalsctn {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.rentalsctn h2 {
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding: 20px;
+}
+
+.grid .rental {
+    flex: 0 0 30%; /* Adjust this value to change the width of the rental items */
+    max-width: 30%; /* Adjust this value to change the maximum width of the rental items */
+    height: 0;
+    padding-bottom: 30%; /* This will make the height equal to the width, creating a square */
+}
+
+

@@ -15,6 +15,11 @@ const express = require("express");
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
+const bodyParser = required('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const { getFeaturedRentals, getRentalsByCityAndProvince } = require('./models/rentals-db.js')
 
 // Set up EJS
@@ -27,47 +32,43 @@ app.use(express.static(path.join(__dirname, "/assets")));
 // Add your routes here
 // e.g. app.get() { ... }
 
-/*
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-*/
-
-
 app.get("/", (req, res) => {
     let featuredRentals = getFeaturedRentals();
     res.render(path.join(__dirname, "/views/layouts/home"), {title: "Home", layout: false, featuredRentals: featuredRentals});
 });
 
-
+/*
 app.get("/rentals", (req, res) => {
     res.send("Rentals");
 });
-
-/*
-app.get("/rentals", (req, res) => {
-    res.render(path.join(__dirname, "/views/layouts/rentals"), {title: "Rentals"});
-});
 */
 
+
+app.get("/rentals", (req, res) => {
+    let groupedRentals = getRentalsByCityAndProvince();
+    res.render(path.join(__dirname, "/views/layouts/rentals"), {title: "Rentals", layout: false, rentals: groupedRentals});
+});
+
+/*
 app.get("/sign-up", (req, res) => {
     res.send("Sign-Up");
 });
-
-/*
-app.get("/sign-up", (req, res) => {
-    res.render(path.join(__dirname, "/views/layouts/sign-up"), {title: "Sign-Up"});
-});
 */
 
-app.get("/log-in", (req, res) => {
-    res.send("Login");
+app.get("/sign-up", (req, res) => {
+    res.render(path.join(__dirname, "/views/layouts/sign-up"), {title: "Sign-Up", layout: false});
 });
 
-/*
+
 app.get("/log-in", (req, res) => {
-    res.render(path.join(__dirname, "/views/layouts/log-in"), {title: "Log-In"});
+    res.render(path.join(__dirname, "/views/layouts/log-in"), {title: "Log-In", layout: false});
 });
+
+
+/*
+app.get("/welcome", (req, res) => {
+    res.render(path.join(__dirname, "/views/layouts/welcome"), {title: "Welcome!"});
+}); 
 */
 
 // *** DO NOT MODIFY THE LINES BELOW ***
