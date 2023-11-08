@@ -15,7 +15,7 @@ const express = require("express");
 const expressLayouts = require('express-ejs-layouts');
 const app = express();
 
-const bodyParser = required('body-parser');
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
