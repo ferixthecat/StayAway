@@ -317,4 +317,6 @@ input {
     padding-bottom: 30%; /* This will make the height equal to the width, creating a square */
 }
 
-
+.error {
+    color: red;
+}

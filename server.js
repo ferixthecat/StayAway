@@ -13,17 +13,20 @@
 const path = require("path");
 const express = require("express");
 const expressLayouts = require('express-ejs-layouts');
-const app = express();
-
+const dotenv = require("dotenv");
 const bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+dotenv.config({ path: "./.env "});
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const { getFeaturedRentals, getRentalsByCityAndProvince } = require('./models/rentals-db.js')
 
 // Set up EJS
 app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main');
 app.use(expressLayouts);
 
 // Make assets folder public 
@@ -37,28 +40,14 @@ app.get("/", (req, res) => {
     res.render(path.join(__dirname, "/views/layouts/home"), {title: "Home", layout: false, featuredRentals: featuredRentals});
 });
 
-/*
-app.get("/rentals", (req, res) => {
-    res.send("Rentals");
-});
-*/
-
-
 app.get("/rentals", (req, res) => {
     let groupedRentals = getRentalsByCityAndProvince();
     res.render(path.join(__dirname, "/views/layouts/rentals"), {title: "Rentals", layout: false, rentals: groupedRentals});
 });
 
-/*
-app.get("/sign-up", (req, res) => {
-    res.send("Sign-Up");
-});
-*/
-
 app.get("/sign-up", (req, res) => {
     res.render(path.join(__dirname, "/views/layouts/sign-up"), {title: "Sign-Up", layout: false});
 });
-
 
 app.get("/log-in", (req, res) => {
     res.render(path.join(__dirname, "/views/layouts/log-in"), {title: "Log-In", layout: false});
